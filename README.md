@@ -8,12 +8,13 @@ O projeto começou como uma calculadora executada pelo terminal e posteriormente
 
 ### Interface
 
-
+![Calculadora](assets/foto.png)
 
 
 
 ### 🎥 GIF da aplicação
 
+![Calculadora](assets/video.gif)
 
 
 
