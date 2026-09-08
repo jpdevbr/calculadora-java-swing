@@ -1,44 +1,50 @@
 import javax.swing.*;
 import java.awt.*;
 
+class Operacao {
 
+    public double raiz(double num1) {
+        double resutado = Math.sqrt(num1);
 
-class Operacao{
-    
-    public float soma(float num1, float num2){
+        return resutado;
+    }
+
+    public float soma(float num1, float num2) {
         float resutado = num1 + num2;
-        
+
         return resutado;
     }
 
-    public float subtracao(float num1, float num2){    
+    public float subtracao(float num1, float num2) {
         float resutado = num1 - num2;
-        
+
         return resutado;
     }
-    public float mutiplicacao(float num1, float num2){
+
+    public float mutiplicacao(float num1, float num2) {
         float resutado = num1 * num2;
-        
+
         return resutado;
     }
-    public float divisao(float num1, float num2){
+
+    public float divisao(float num1, float num2) {
         if (num2 == 0) {
-            throw new  ArithmeticException("não é possivel dividir por zero...");
+            throw new ArithmeticException("não é possivel dividir por zero...");
         }
         float resutado = num1 / num2;
         return resutado;
     }
 }
 
-
 public class Interface extends JFrame {
 
     float num1;
     String operacao;
 
-    public Interface(){
-        setTitle("calculadora");;
-        setSize(300,400);
+    public Interface() {
+        setTitle("calculadora");
+        ;
+        setSize(300, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setLayout(new BorderLayout());
@@ -46,17 +52,17 @@ public class Interface extends JFrame {
         JTextField visor = new JTextField();
         add(visor, BorderLayout.NORTH);
         visor.setEditable(false);
-        
+
         JPanel panelButaos = new JPanel();
-        panelButaos.setLayout(new GridLayout(5,4));
-        
+        panelButaos.setLayout(new GridLayout(5, 4));
+
         JButton buttonC = new JButton("C");
         panelButaos.add(buttonC);
         JButton buttonBack = new JButton("←");
         panelButaos.add(buttonBack);
         JButton buttonDiv = new JButton("/");
         panelButaos.add(buttonDiv);
-        
+
         JButton buttonmais = new JButton("+");
         panelButaos.add(buttonmais);
 
@@ -66,7 +72,7 @@ public class Interface extends JFrame {
         panelButaos.add(buttonOito);
         JButton buttonNove = new JButton("9");
         panelButaos.add(buttonNove);
-        
+
         JButton buttonmenos = new JButton("-");
         panelButaos.add(buttonmenos);
 
@@ -76,7 +82,7 @@ public class Interface extends JFrame {
         panelButaos.add(buttonCinco);
         JButton buttonSeis = new JButton("6");
         panelButaos.add(buttonSeis);
-        
+
         JButton buttonveses = new JButton("x");
         panelButaos.add(buttonveses);
 
@@ -86,8 +92,9 @@ public class Interface extends JFrame {
         panelButaos.add(buttonDois);
         JButton buttonTres = new JButton("3");
         panelButaos.add(buttonTres);
-        
-        panelButaos.add(new JButton());
+
+        JButton buttonRaiz = new JButton("√");
+        panelButaos.add(buttonRaiz);
 
         JButton buttonZero = new JButton("0");
         panelButaos.add(buttonZero);
@@ -97,100 +104,112 @@ public class Interface extends JFrame {
         panelButaos.add(buttonIgual);
 
         panelButaos.add(new JButton());
-        
+
         buttonSete.addActionListener(e -> {
-            visor.setText(visor.getText()+"7");
+            visor.setText(visor.getText() + "7");
         });
-        buttonOito.addActionListener(e ->{
-            visor.setText(visor.getText()+"8");
+        buttonOito.addActionListener(e -> {
+            visor.setText(visor.getText() + "8");
         });
-        
+
         buttonNove.addActionListener(e -> {
-            visor.setText(visor.getText()+"9");
+            visor.setText(visor.getText() + "9");
         });
         buttonQuatro.addActionListener(e -> {
-            visor.setText(visor.getText()+"4");
+            visor.setText(visor.getText() + "4");
         });
         buttonCinco.addActionListener(e -> {
-            visor.setText(visor.getText()+"5");
+            visor.setText(visor.getText() + "5");
         });
         buttonSeis.addActionListener(e -> {
-            visor.setText(visor.getText()+"6");
+            visor.setText(visor.getText() + "6");
         });
         buttonUm.addActionListener(e -> {
-            visor.setText(visor.getText()+"1");
+            visor.setText(visor.getText() + "1");
         });
         buttonDois.addActionListener(e -> {
-            visor.setText(visor.getText()+"2");
+            visor.setText(visor.getText() + "2");
         });
         buttonTres.addActionListener(e -> {
-            visor.setText(visor.getText()+"3");
+            visor.setText(visor.getText() + "3");
         });
         buttonZero.addActionListener(e -> {
-            visor.setText(visor.getText()+"0");
+            visor.setText(visor.getText() + "0");
         });
         buttonPoint.addActionListener(e -> {
-            visor.setText(visor.getText()+".");
+            visor.setText(visor.getText() + ".");
         });
         buttonC.addActionListener(e -> {
             visor.setText("");
         });
+        buttonBack.addActionListener(e -> {
+            String texto = visor.getText();
+            if (!texto.isEmpty()) {
+                visor.setText(texto.substring(0, texto.length() - 1));
+            }
+        });
 
-        buttonmais.addActionListener(e ->{
+        buttonmais.addActionListener(e -> {
             operacao = "+";
             num1 = Float.parseFloat(visor.getText());
             visor.setText("");
-            
+
         });
 
-        buttonmenos.addActionListener(e ->{
+        buttonmenos.addActionListener(e -> {
             operacao = "-";
             num1 = Float.parseFloat(visor.getText());
             visor.setText("");
-            
+
         });
 
-        buttonveses.addActionListener(e ->{
+        buttonveses.addActionListener(e -> {
             operacao = "*";
             num1 = Float.parseFloat(visor.getText());
             visor.setText("");
-            
+
         });
-        buttonDiv.addActionListener(e ->{
+        buttonDiv.addActionListener(e -> {
             operacao = "/";
             num1 = Float.parseFloat(visor.getText());
             visor.setText("");
-            
+
         });
 
-        buttonIgual.addActionListener(e ->{
+        Operacao operacao1 = new Operacao();
+
+        buttonRaiz.addActionListener(e -> {
+            float num1 = Float.parseFloat(visor.getText());
+            double resutado = operacao1.raiz(num1);
+            visor.setText(String.valueOf(resutado));
+        });
+
+        buttonIgual.addActionListener(e -> {
             float num2 = Float.parseFloat(visor.getText());
-            
-            Operacao operacao1 = new Operacao();
 
             switch (operacao) {
-                case "+":{
-                    float resutado = operacao1.soma (num1,num2);
+                case "+": {
+                    float resutado = operacao1.soma(num1, num2);
                     visor.setText(String.valueOf(resutado));
                     break;
-                    
+
                 }
-                case "-":{
-                    float resutado = operacao1.subtracao(num1,num2);
-                    visor.setText(String.valueOf(resutado));
-                    break;
-                }
-                case "*":{
-                    float resutado = operacao1.mutiplicacao(num1,num2);
+                case "-": {
+                    float resutado = operacao1.subtracao(num1, num2);
                     visor.setText(String.valueOf(resutado));
                     break;
                 }
-                case "/":{
-                    float resutado = operacao1.divisao(num1,num2);
+                case "*": {
+                    float resutado = operacao1.mutiplicacao(num1, num2);
                     visor.setText(String.valueOf(resutado));
                     break;
                 }
-                
+                case "/": {
+                    float resutado = operacao1.divisao(num1, num2);
+                    visor.setText(String.valueOf(resutado));
+                    break;
+                }
+
             }
 
         });
@@ -198,8 +217,8 @@ public class Interface extends JFrame {
         add(panelButaos, BorderLayout.CENTER);
         setVisible(true);
     }
-    
-} 
+
+}
 
 class Main {
     public static void main(String[] args) {
