@@ -1,4 +1,4 @@
-# 🧮 Calculadora Java Swing
+<img width="355" height="487" alt="image" src="https://github.com/user-attachments/assets/acb63b0e-f052-40f9-bced-ec3784bd75f8" /># 🧮 Calculadora Java Swing
 
 Uma calculadora de operações básicas desenvolvida em **Java Swing** como parte dos meus estudos de Java e Programação Orientada a Objetos.
 
@@ -29,6 +29,7 @@ A calculadora atualmente possui:
 * ➖ Subtração
 * ✖️ Multiplicação
 * ➗ Divisão
+* ✔️ Raiz Quadrada
 * 🔢 Números decimais
 * 🧹 Limpeza do visor
 * ⚠️ Tratamento de divisão por zero
@@ -160,7 +161,6 @@ A divisão por zero também é tratada através de uma `ArithmeticException`.
 
 ## 🔮 Próximas melhorias
 
-* [ ] Implementar o botão `←`
 * [ ] Permitir operações consecutivas
 * [ ] Melhorar o design da interface
 * [ ] Adicionar teclado numérico
