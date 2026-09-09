@@ -6,15 +6,9 @@ O projeto começou como uma calculadora executada pelo terminal e posteriormente
 
 ## 📸 Demonstração
 
-### Interface
-
-![Calculadora](assets/foto.png)
-
-
-
 ### 🎥 GIF da aplicação
 
-![Calculadora](assets/video.gif)
+![Calculadora](assets/video2.gif)
 
 
 
@@ -29,6 +23,8 @@ A calculadora atualmente possui:
 * ➖ Subtração
 * ✖️ Multiplicação
 * ➗ Divisão
+* ✔️ Raiz Quadrada
+* ％ Porcentagem
 * 🔢 Números decimais
 * 🧹 Limpeza do visor
 * ⚠️ Tratamento de divisão por zero
@@ -159,15 +155,11 @@ A divisão por zero também é tratada através de uma `ArithmeticException`.
 ---
 
 ## 🔮 Próximas melhorias
-
-* [ ] Implementar o botão `←`
 * [ ] Permitir operações consecutivas
-* [ ] Melhorar o design da interface
 * [ ] Adicionar teclado numérico
 * [ ] Impedir a entrada de dois pontos decimais no mesmo número
 * [ ] Melhorar o tratamento de entradas inválidas
-* [ ] Adicionar porcentagem
-* [ ] Adicionar outras operações matemáticas
+* [ ] Adicionar outras operações matemática
 
 ---
 
